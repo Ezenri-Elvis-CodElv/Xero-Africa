@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeRoute from "./routes/HomeRoute";
-import Landingpage from "./pages/Landingpage";
 import Aboutus from "./pages/Aboutus";
 import Contactus from "./pages/Contactus";
 import Productss from "./pages/Productss";
 import Faqs from "./pages/faqs";
+import Landingpagee from "./pages/Landingpagee";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeRoute />,
     children: [
-      { index: true, element: <Landingpage /> },
+      { index: true, element: <Landingpagee /> },
       { path: "/about-us", element: <Aboutus /> },
       { path: "/contact-us", element: <Contactus /> },
       { path: "/products", element: <Productss /> },
