@@ -78,7 +78,7 @@ const ContactUss = () => {
 
 	return (
 		<div
-			className="min-h-screen w-full bg-gradient-to-br from-white via-white to-black relative overflow-x-hidden"
+			className="min-h-screen w-full bg-gradient-to-br from-white via-white to-black pt-12 relative overflow-x-hidden"
 			style={{ fontFamily: "Inter, sans-serif" }}
 		>
 			{/* Hero Section */}

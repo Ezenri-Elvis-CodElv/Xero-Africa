@@ -32,7 +32,7 @@ const products = [
 
 const Productss = () => {
 	return (
-		<div className="min-h-screen w-full bg-gradient-to-br from-white via-white to-black py-16 px-4">
+		<div className="min-h-screen w-full bg-gradient-to-br from-white via-white to-black pt-20 px-4">
 			<section className="flex flex-col items-center justify-center mb-12">
 				<Motion.h1
 					initial={{ opacity: 0, scale: 0.8 }}

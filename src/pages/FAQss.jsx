@@ -13,7 +13,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import gsap from "gsap";
-import { motion as Motion } from "motion/react";
+import { motion as Motion, AnimatePresence } from "motion/react";
 import { BarLoader } from "react-spinners";
 
 const faqs = [
@@ -22,9 +22,9 @@ const faqs = [
     shortAnswer:
       "Xero Africa is a digital platform empowering Africa through innovative technology solutions.",
     details: [
-      "• We provide digital products and services tailored for African businesses and individuals.",
-      "• Our platform is built for reliability, scalability, and ease of use.",
-      "• We support startups, SMEs, and enterprises across the continent.",
+      "We provide digital products and services tailored for African businesses and individuals.",
+      "Our platform is built for reliability, scalability, and ease of use.",
+      "We support startups, SMEs, and enterprises across the continent.",
     ],
     icon: <FaCloud className="text-xl" />,
   },
@@ -32,9 +32,9 @@ const faqs = [
     question: "How do I contact Xero Africa?",
     shortAnswer: "You can reach us via our contact form or official email.",
     details: [
-      "• Use the Contact Us page for quick inquiries.",
-      "• Email us directly at support@xeroafrica.com.",
-      "• Our support team responds within 24 hours.",
+      "Use the Contact Us page for quick inquiries.",
+      "Email us directly at support@xeroafrica.com.",
+      "Our support team responds within 24 hours.",
     ],
     icon: <FaHandsHelping className="text-xl" />,
   },
@@ -42,10 +42,10 @@ const faqs = [
     question: "What products does Xero Africa offer?",
     shortAnswer: "We offer mobile apps, web platforms, and APIs for businesses.",
     details: [
-      "• Mobile App: Manage your business on the go.",
-      "• Web Platform: Full-featured dashboard for all users.",
-      "• API: Integrate our services into your own products.",
-      "• Regular updates and new features based on user feedback.",
+      "Mobile App: Manage your business on the go.",
+      "Web Platform: Full-featured dashboard for all users.",
+      "API: Integrate our services into your own products.",
+      "Regular updates and new features based on user feedback",
     ],
     icon: <FaMobileAlt className="text-xl text-blue-600" />,
   },
@@ -54,10 +54,10 @@ const faqs = [
     shortAnswer:
       "Yes, we use industry-standard encryption and best security practices.",
     details: [
-      "• All data is encrypted in transit and at rest.",
-      "• We comply with global data protection standards.",
-      "• Regular security audits and monitoring.",
-      "• Your privacy and security are our top priorities.",
+      "All data is encrypted in transit and at rest.",
+      "We comply with global data protection standards.",
+      "Regular security audits and monitoring.",
+      "Your privacy and security are our top priorities",
     ],
     icon: <FaLock className="text-xl" />,
   },
@@ -66,9 +66,9 @@ const faqs = [
     shortAnswer:
       "Our support team is available via email and help center.",
     details: [
-      "• Email: support@xeroafrica.com",
-      "• Help Center: Guides, FAQs, and troubleshooting tips.",
-      "• Personalized onboarding and technical assistance.",
+      "Email: support@xeroafrica.com",
+      "Help Center: Guides, FAQs, and troubleshooting tips.",
+      "Personalized onboarding and technical assistance.",
     ],
     icon: <FaHandsHelping className="text-xl" />,
   },
@@ -76,9 +76,9 @@ const faqs = [
     question: "Can I join the Xero Africa team?",
     shortAnswer: "Yes! We are always looking for talented individuals.",
     details: [
-      "• Visit our Careers page for open positions.",
-      "• Submit your CV and cover letter online.",
-      "• We value diversity and innovation.",
+      "Visit our Careers page for open positions.",
+      "Submit your CV and cover letter online.",
+      "We value diversity and innovation.",
     ],
     icon: <FaUsers className="text-xl" />,
   },
@@ -86,9 +86,9 @@ const faqs = [
     question: "Where can I find more information about pricing?",
     shortAnswer: "Our pricing details are available on the Products page.",
     details: [
-      "• Transparent pricing for all services.",
-      "• Custom plans available for enterprises.",
-      "• Contact us for partnership or bulk pricing.",
+      "Transparent pricing for all services.",
+      "Custom plans available for enterprises.",
+      "Contact us for partnership or bulk pricing.",
     ],
     icon: <FaCreditCard className="text-xl" />,
   },
@@ -96,9 +96,9 @@ const faqs = [
     question: "How do I keep my account secure?",
     shortAnswer: "Use strong passwords and enable two-factor authentication.",
     details: [
-      "• Never share your password with anyone.",
-      "• Enable 2FA in your account settings.",
-      "• Contact support if you notice suspicious activity.",
+      "Never share your password with anyone.",
+      "Enable 2FA in your account settings.",
+      "Contact support if you notice suspicious activity.",
     ],
     icon: <FaUserShield className="text-xl" />,
   },
@@ -169,7 +169,7 @@ const FAQss = () => {
 
   return (
     <div
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden pt-30"
       style={{
         background: "linear-gradient(120deg, #18181b 60%, #23272e 80%, #f3f4f6 100%)"
       }}
@@ -265,25 +265,29 @@ const FAQss = () => {
                   )}
                 </div>
               </button>
-              <Motion.div
-                className={`overflow-hidden transition-all duration-500 ${
-                  openIdx === idx ? "max-h-96" : "max-h-0"
-                }`}
-                initial={false}
-              >
-                {openIdx === idx && !loadingIdx ? (
-                  <div className="px-6 pb-6 pt-2 border-t border-gray-100">
-                    <ul className="space-y-3 text-gray-700">
-                      {faq.details.map((line, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="text-black mr-2 mt-1">•</span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-              </Motion.div>
+              <AnimatePresence initial={false}>
+                {openIdx === idx && !loadingIdx && (
+                  <Motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                      <ul className="space-y-3 text-gray-700">
+                        {faq.details.map((line, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-black mr-2 mt-1">•</span>
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Motion.div>
+                )}
+              </AnimatePresence>
             </Motion.div>
           ))}
         </div>
