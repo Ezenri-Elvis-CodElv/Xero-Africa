@@ -111,7 +111,7 @@ const Spinner = () => (
   </div>
 );
 
-const FAQs = () => {
+const Faqs = () => {
   const bgRef = useRef(null);
   const [openIdx, setOpenIdx] = useState(null);
   const [loadingIdx, setLoadingIdx] = useState(null);
@@ -320,4 +320,4 @@ const FAQs = () => {
   );
 };
 
-export default FAQs;
+export default Faqs;

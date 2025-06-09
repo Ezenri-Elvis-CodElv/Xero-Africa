@@ -27,7 +27,7 @@ const contactDetails = [
 	},
 ];
 
-const ContactUs = () => {
+const Contactus = () => {
 	const formRef = useRef(null);
 	const detailsRef = useRef(null);
 
@@ -258,4 +258,4 @@ const ContactUs = () => {
 	);
 };
 
-export default ContactUs;
+export default Contactus;

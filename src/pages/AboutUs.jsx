@@ -45,7 +45,7 @@ const coreValues = [
   },
 ];
 
-const AboutUs = () => {
+const Aboutus = () => {
   const missionRef = useRef(null);
   const visionRef = useRef(null);
   const valuesRef = useRef(null);
@@ -309,4 +309,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Aboutus;

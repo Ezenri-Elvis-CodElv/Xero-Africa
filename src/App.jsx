@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeRoute from "./routes/HomeRoute";
 import Landingpage from "./pages/Landingpage";
-import FAQs from "./pages/FAQs";
-import Products from "./pages/Products";
-import ContactUs from "./pages/ContactUs";
-import AboutUs from "./pages/AboutUs";
+import Aboutus from "./pages/Aboutus";
+import Contactus from "./pages/Contactus";
+import Productss from "./pages/Productss";
+import Faqs from "./pages/faqs";
 
 const router = createBrowserRouter([
   {
@@ -12,10 +12,10 @@ const router = createBrowserRouter([
     element: <HomeRoute />,
     children: [
       { index: true, element: <Landingpage /> },
-      { path: "/about-us", element: <AboutUs /> },
-      { path: "/contact-us", element: <ContactUs /> },
-      { path: "/products", element: <Products /> },
-      { path: "/faqs", element: <FAQs /> },
+      { path: "/about-us", element: <Aboutus /> },
+      { path: "/contact-us", element: <Contactus /> },
+      { path: "/products", element: <Productss /> },
+      { path: "/faqs", element: <Faqs /> },
          ],
   },
 ]);
