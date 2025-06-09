@@ -95,28 +95,30 @@ const Landingpagee = () => {
         </Motion.div>
       </section>
       
-      <style jsx>{`
-        .hero-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
-          pointer-events: none;
-        }
-        .hero-section::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 30%;
-          background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-          pointer-events: none;
-        }
-      `}</style>
+      <style>
+        {`
+          .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+          }
+          .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            pointer-events: none;
+          }
+        `}
+      </style>
       <div className='w-full h-[70vh] flex items-center justify-center bg-white'
       style={{ backgroundImage: 'url(/images/bgheropage.svg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className='w-[95%] h-[95%] flex items-center justify-center relative'>

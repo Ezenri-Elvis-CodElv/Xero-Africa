@@ -1,10 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomeRoute from "./routes/HomeRoute";
-import Aboutus from "./pages/Aboutus";
-import Contactus from "./pages/Contactus";
-import Productss from "./pages/Productss";
-import Faqs from "./pages/faqs";
 import Landingpagee from "./pages/Landingpagee";
+import AboutUss from "./pages/AboutUss";
+import ContactUss from "./pages/ContactUss";
+import FAQss from "./pages/FAQss";
+import Productss from "./pages/Productss";
+
 
 const router = createBrowserRouter([
   {
@@ -12,10 +13,10 @@ const router = createBrowserRouter([
     element: <HomeRoute />,
     children: [
       { index: true, element: <Landingpagee /> },
-      { path: "/about-us", element: <Aboutus /> },
-      { path: "/contact-us", element: <Contactus /> },
+      { path: "/about-us", element: <AboutUss /> },
+      { path: "/contact-us", element: <ContactUss /> },
       { path: "/products", element: <Productss /> },
-      { path: "/faqs", element: <Faqs /> },
+      { path: "/faqs", element: <FAQss /> },
          ],
   },
 ]);
