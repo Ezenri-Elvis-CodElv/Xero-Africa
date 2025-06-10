@@ -207,7 +207,7 @@ const AboutUss = () => {
         >
           {/* Placeholder for mission image */}
           <div className="w-64 h-64 bg-black/10 rounded-3xl shadow-xl flex items-center justify-center animate-pulse">
-            <span className="text-black font-bold text-lg">Mission Image</span>
+            <span className="text-black font-bold text-lg">Mission </span>
           </div>
         </Motion.div>
       </section>
@@ -226,7 +226,7 @@ const AboutUss = () => {
         >
           {/* Placeholder for vision image */}
           <div className="w-64 h-64 bg-black/10 rounded-3xl shadow-xl flex items-center justify-center animate-pulse">
-            <span className="text-gray-700 font-bold text-lg">Vision Image</span>
+            <span className="text-gray-700 font-bold text-lg">Vision </span>
           </div>
         </Motion.div>
         <Motion.div
