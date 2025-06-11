@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3  mb-6">
               <div className='flex items-center gap-2 cursor-pointer' onClick={() => handleNav('/')}>
         <img src="/Option.jpg" alt="logo" className='w-10 h-10 rounded-lg'/>
         <h2 className='text-3xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-["WDXL_Lubrifont_TC",_sans-serif]'>
